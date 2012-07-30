@@ -1,0 +1,10 @@
+<script>
+
+chrome.contextMenus.create({
+  'title' : 'Open Extensions',
+  'contexts' : ['all'],
+  'onclick' : function(info, tab) {
+    chrome.tabs.create({url: "chrome://extensions/"});
+  }
+});
+</script>

@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="author" content="Ido Green">
+	<style>
+html {
+  width: 350px;
+  height: 600px !important;	
+}
+
+
+</style>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4/jquery.mobile-1.0a4.min.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0a4/jquery.mobile-1.0a4.min.js"></script>
+	<script>
+
+///////////
+// start the party
+$(document).ready(function() {	
+ //var ourExt = chrome.app.getDetails();
+
+ //TODO - remove it and use a class for all of these	
+  $("#ext").click(function() {
+		chrome.tabs.create({url: "chrome://extensions/"});
+  });
+  $("#down").click(function() {
+		chrome.tabs.create({url: "chrome://>downloads/"});
+  });
+  $("#set").click(function() {
+		chrome.tabs.create({url: "chrome://settings/"});
+  });
+  $("#his").click(function() {
+		chrome.tabs.create({url: "chrome://history/"});
+  });
+
+	$(".about").click(function() {
+		chrome.tabs.create({url: this.innerText});
+	});
+	
+	$(".chrome").click(function() {
+		chrome.tabs.create({url: 'chrome://' + this.innerText});
+	});
+
+});
+
+</script>
+
+</head>
+<body>
+
+	<div data-role="page" id="home" data-theme="a">
+		<div data-role="header" data-theme="b" >
+			<h1>Chrome ShortCuts</h1>
+		</div>
+		<div data-role="content">
+			<ul data-role="listview" data-theme="d" data-filter="true">
+				<li>
+					<a href="#" id='ext' data-icon="gear">
+						<img src="ext.png" class="ui-li-icon"/>
+						Extensions
+					</a>
+				</li>
+				<li>
+					<a href="#" id='set'>
+						<img src="setting.png" class="ui-li-icon"/>
+						Settings
+					</a>
+				</li>
+				<li>
+					<a href="#" id='down'>
+						<img src="down.png" class="ui-li-icon"/>
+						Downloads
+					</a>
+				</li>
+				<li>
+					<a href="#" id='his'>
+						<img src="history.png" class="ui-li-icon"/>
+						History
+					</a>
+				</li>
+
+				<li data-role="list-divider">Chrome Data</li>
+
+				<li>
+					<a href="#" class='chrome'>plugins</a>
+				</li>
+				<li>
+					<a href="#" class='chrome'>appcache-internals</a>
+				</li>
+				<li>
+					<a href="#" class='chrome'>blob-internals</a>
+				</li>
+				<li>
+					<a href="#" class='chrome'>chrome-urls</a>
+				</li>
+				<li>
+					<a href="#" class='chrome'>crashes</a>
+				</li>
+				<li>
+					<a href="#" class='chrome'>credits</a>
+				</li>
+				<li>
+					<a href="#" class='chrome'>dns</a>
+				</li>
+				<li>
+					<a href="#" class='chrome'>flags</a>
+				</li>
+				<li>
+					<a href="#" class='chrome'>flash</a>
+				</li>
+				<li>
+					<a href="#" class='chrome'>gpu-internals</a>
+				</li>
+				<li>
+					<a href="#" class='chrome'>histograms</a>
+				</li>
+				<li>
+					<a href="#" class='chrome'>memory</a>
+				</li>
+				<li>
+					<a href="#" class='chrome'>net-internals</a>
+				</li>
+				<li>
+					<a href="#" class='chrome'>view-http-cache</a>
+				</li>
+				<li>
+					<a href="#" class='chrome'>stats</a>
+				</li>
+				<li>
+					<a href="#" class='chrome'>sync-internals</a>
+				</li>
+				<li>
+					<a href="#" class='chrome'>tcmalloc</a>
+				</li>
+
+				<li data-role="list-divider">About</li>
+				<li>
+					<a href="#" class='about'>about:terms</a>
+				</li>
+				<li>
+					<a href="#" class='about'>about:version</a>
+				</li>
+
+				<li data-role="list-divider">Debug</li>
+				<li>
+					<a href="#" class='chrome'>crash</a>
+				</li>
+				<li>
+					<a href="#" class='chrome'>kill</a>
+				</li>
+				<li>
+					<a href="#" class='chrome'>hang</a>
+				</li>
+				<li>
+					<a href="#" class='chrome'>shorthang</a>
+				</li>
+				<li>
+					<a href="#" class='chrome'>gpuclean</a>
+				</li>
+				<li>
+					<a href="#" class='chrome'>gpucrash</a>
+				</li>
+				<li>
+					<a href="#" class='chrome'>gpuhang</a>
+				</li>
+
+			</ul>
+
+		</div>
+
+	</div>
+</body>
+</html>

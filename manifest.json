@@ -1,0 +1,17 @@
+{
+  "name": "ShortCuts",
+  "version": "0.2",
+  "description": "Show short cuts and tips on Chrome",
+  "icons": { 
+	"48": "app-icon-48.png"
+   },
+  "background_page": "background.html",
+  "permissions": [
+		"contextMenus"
+  ],
+  "browser_action": {
+      "default_title": "Display short cuts and tips",
+      "default_icon": "toolbar-icon20.png",
+      "popup": "popup.html"
+  }
+}
